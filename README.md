@@ -38,3 +38,127 @@ make migrate
 * http://localhost:8080/api/lists/:id для получения, редактирования и удаления опреденного списка задания по переданного id.
 * http://localhost:8080/api/lists/:id/items для создания и получения определенной подзадачи в задании
 * http://localhost:8080/api/items/:id для получения, изменения и удаления определенной подзадачи по ее id
+
+## Обращение к конечным точкам API
+
+### POST http://localhost:8080/auth/sign-up
+#### Пример ввода:
+```
+{
+    "name": "name",
+    "username": "username",
+    "password": "password"
+}
+```
+#### Пример вывода:
+```
+{
+    "id": 1
+}
+```
+### POST http://localhost:8080/auth/sign-in
+#### Пример ввода:
+```
+{
+    "username": "username",
+    "password": "password"
+}
+```
+#### Пример вывода:
+```
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTg1MDI5NTQsImlhdCI6MTY5ODQ1OTc1NCwidXNlcl9pZCI6NX0.jiuI6_lwZiG-hh0TzeIesu8u2UlDUTIJ9M3UnaGvKB4"
+}
+```
+### POST http://localhost:8080/api/lists
+#### Пример ввода:
+```
+{
+    "title": "Список покупок",
+    "description": "Купить завтра"
+}
+```
+#### Пример вывода:
+```
+{
+    "id": 6
+}
+```
+### GET http://localhost:8080/api/lists
+#### Пример вывода:
+```
+{
+    "data": [
+        {
+            "id": 6,
+            "title": "Список покупок",
+            "description": "Купить завтра"
+        }
+    ]
+}
+```
+### GET http://localhost:8080/api/lists/6
+#### Пример вывода:
+```
+{
+    "id": 6,
+    "title": "Список покупок",
+    "description": "Купить завтра"
+}
+```
+### PUT http://localhost:8080/api/lists/6
+#### Пример ввода:
+```
+{
+    "title": "Список покупок",
+    "description": "Купить послезавтра"
+}
+```
+#### Пример вывода:
+```
+{
+    "status": "ok"
+}
+```
+### POST http://localhost:8080/api/lists/6/items
+#### Пример ввода:
+```
+{
+    "title": "Хлеб",
+    "description": "Белый"
+}
+```
+#### Пример вывода:
+```
+{
+    "id": 3
+}
+```
+### GET http://localhost:8080/api/lists/6/items
+#### Пример вывода:
+```
+[
+    {
+        "id": 3,
+        "title": "Хлеб",
+        "description": "Белый",
+        "done": false
+    },
+    {
+        "id": 4,
+        "title": "Молоко",
+        "description": "Деревенское",
+        "done": false
+    }
+]
+```
+### GET http://localhost:8080/api/items/3
+#### Пример вывода:
+```
+{
+    "id": 3,
+    "title": "Хлеб",
+    "description": "Белый",
+    "done": false
+}
+```
