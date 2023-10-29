@@ -2,6 +2,7 @@ package handler
 
 import (
 	"example.com/m/v2/pkg/service"
+	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,6 +16,8 @@ func NewHandler(services *service.Service) *Handler {
 
 func (h *Handler) InitRoutes() *gin.Engine {
 	router := gin.New()
+
+	router.Use(static.Serve("/", static.LocalFile("static", false)))
 
 	auth := router.Group("/auth")
 	{
@@ -45,5 +48,6 @@ func (h *Handler) InitRoutes() *gin.Engine {
 			items.DELETE("/:id", h.deleteItem)
 		}
 	}
+
 	return router
 }
