@@ -4,7 +4,8 @@ import (
 	"net/http"
 	"strconv"
 
-	todo "example.com/m/v2"
+	todo "todo-app"
+
 	"github.com/gin-gonic/gin"
 )
 

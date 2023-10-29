@@ -1,7 +1,8 @@
 package repository
 
 import (
-	todo "example.com/m/v2"
+	todo "todo-app"
+
 	"github.com/jmoiron/sqlx"
 )
 

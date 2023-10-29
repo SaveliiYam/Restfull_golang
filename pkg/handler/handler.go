@@ -1,7 +1,8 @@
 package handler
 
 import (
-	"example.com/m/v2/pkg/service"
+	"todo-app/pkg/service"
+
 	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 )

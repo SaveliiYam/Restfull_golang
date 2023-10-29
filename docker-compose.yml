@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  todo-app:
+    build: ./
+    command: ./wait-for-postgres.sh db ./todo-app
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - DB_PASSWORD=662011Egor
+  
+  db:
+    restart: always
+    image: ubuntu/postgres:14-22.04_beta 
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=662011Egor
+    ports:
+      - 5436:5432

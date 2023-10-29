@@ -6,10 +6,11 @@ import (
 	"os/signal"
 	"syscall"
 
-	todo "example.com/m/v2"
-	"example.com/m/v2/pkg/handler"
-	"example.com/m/v2/pkg/repository"
-	"example.com/m/v2/pkg/service"
+	todo "todo-app"
+	"todo-app/pkg/handler"
+	"todo-app/pkg/repository"
+	"todo-app/pkg/service"
+
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
@@ -67,7 +68,7 @@ func main() {
 }
 
 func InitConfig() error {
-	viper.AddConfigPath("../configs")
+	viper.AddConfigPath("configs")
 	viper.SetConfigName("config")
 	return viper.ReadInConfig()
 }

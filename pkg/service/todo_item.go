@@ -1,8 +1,8 @@
 package service
 
 import (
-	todo "example.com/m/v2"
-	"example.com/m/v2/pkg/repository"
+	todo "todo-app"
+	"todo-app/pkg/repository"
 )
 
 type TodoItemService struct {

@@ -3,7 +3,8 @@ package handler
 import (
 	"net/http"
 
-	todo "example.com/m/v2"
+	todo "todo-app"
+
 	"github.com/gin-gonic/gin"
 )
 

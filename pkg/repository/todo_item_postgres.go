@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	todo "example.com/m/v2"
+	todo "todo-app"
+
 	"github.com/jmoiron/sqlx"
 	"github.com/sirupsen/logrus"
 )
